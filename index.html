@@ -20,68 +20,21 @@
             Country Code
             <input type="text" id="countryCode" value="US">
         </div>
-        <input type="button" value="Show Calendar">
+        <input type="button" value="Show" onclick="initCalendar();">
     </div>
-    <div id="calendar">
-        <div class="cal">
-            <table id="days">
-                <tbody>
-                    <tr>
-                        <td>S</td>
-                        <td>M</td>
-                        <td>T</td>
-                        <td>W</td>
-                        <td>T</td>
-                        <td>F</td>
-                        <td>S</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="header"><span class="month-year">August </span></div>
-            <div id="cal-frame">
-                <table class="curr">
-                    <tbody>
-                        <tr>
-                            <td class="nil"></td>
-                            <td class="nil"></td>
-                            <td class="nil"></td>
-                            <td class="nil"></td>
-                            <td class="nil"></td>
-                            <td class="weekday">15</td>
-                            <td class="weekend">16</td>
-                        </tr>
-                        <tr>
-                            <td class="weekend">17</td>
-                            <td class="weekday">18</td>
-                            <td class="weekday">19</td>
-                            <td class="weekday">20</td>
-                            <td class="weekday">21</td>
-                            <td class="weekday">22</td>
-                            <td class="weekend">23</td>
-                        </tr>
-                        <tr>
-                            <td class="weekend">24</td>
-                            <td class="weekday">25</td>
-                            <td class="weekday">26</td>
-                            <td class="weekday">27</td>
-                            <td class="weekday">28</td>
-                            <td class="weekday">29</td>
-                            <td class="weekend">30</td>
-                        </tr>
-                        <tr>
-                            <td class="weekend">31</td>
-                            <td class="nil"></td>
-                            <td class="nil"></td>
-                            <td class="nil"></td>
-                            <td class="nil"></td>
-                            <td class="nil"></td>
-                            <td class="nil"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+    <div id="calendar"></div>
+    <script src="/calendar.js"></script>
+    <script>
+        function initCalendar() {
+            var date = document.getElementById('startDate').value;
+            var calendarDiv = document.getElementById('calendar');
+            var noDays = document.getElementById('numberDays').value;
+            var countryCode = document.getElementById('countryCode');
+
+            calendar(date, noDays, calendarDiv);
+        }
+        initCalendar();
+    </script>
 
 </body>
 
